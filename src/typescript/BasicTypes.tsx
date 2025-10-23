@@ -4,6 +4,7 @@ interface Cafe {
     name: string;
     roast: string;
     date: Date;
+    isArtesanal?: boolean;
     location: Location;
   }
 
@@ -20,17 +21,16 @@ export const BasicTypes = () => {
   const isDeveloper:  boolean = true;
   const powers: string[] = ['HTML', 'CSS', 'JS', 'React'];
 
-  //
   const cafe: Cafe = {
     name: 'Typica',
     roast: 'Medium',
     date: new Date(2022, 5, 10),
+    isArtesanal: undefined,
     location: {
       country: 'Colombia',
       msnm: 1200
     }
   }
-
 
   return (
     <>  
@@ -41,7 +41,11 @@ export const BasicTypes = () => {
       <br />
 
       <div> My Cafe </div>
-
+      <pre>
+        { JSON.stringify(cafe, null, 1) }
+      </pre>
+      
+      <br />
       { cafe.name } - { cafe.roast } - { cafe.date.toDateString() } - { cafe.location.country } - { cafe.location.msnm } msnm
       
       <br />
